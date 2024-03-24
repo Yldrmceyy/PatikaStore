@@ -76,7 +76,6 @@ public class PatikaStore {
         input.hasNextLine();
         System.out.print("Enter product name: ");
         String name = input.next();
-
         System.out.print("Enter unit price of the product: ");
         double unitPrice = input.nextDouble();
         System.out.print("Enter stock count: ");
