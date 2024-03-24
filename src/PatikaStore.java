@@ -25,7 +25,7 @@ public class PatikaStore {
     }
 
     public boolean showMenu() {
-        System.out.println("###### PatikaStore Ürün Yönetim Paneli ######");
+        System.out.println("###### PatikaStore Product Management Panel ######");
         while (true) {
             System.out.println("1 - Add NoteBook");
             System.out.println("2 - Add Mobile Phone");
