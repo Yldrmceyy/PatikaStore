@@ -25,12 +25,12 @@ public class PatikaStore {
     }
 
     public boolean showMenu() {
-        System.out.println("###### PatikaStore Ürün Yönetim Paneli ######");
+        System.out.println("###### Patika Store Product Management Panel ######");
         while (true) {
             System.out.println("1 - Add NoteBook");
             System.out.println("2 - Add Mobile Phone");
             System.out.println("3 - Delete Product");
-            System.out.println("4 - List Brands");
+            System.out.println("5 - List Brands");
             System.out.println("0 - Exit");
             System.out.print("Please select an action: ");
             int choice = input.nextInt();
@@ -56,7 +56,7 @@ public class PatikaStore {
                     listProducts();
                     break;
                 case 4:
-                    System.out.println("Brands");
+                    System.out.println("BRANDS");
                     listBrands();
                     break;
                 default:
@@ -73,44 +73,43 @@ public class PatikaStore {
     }
 
     public void addProduct(int choice) {
-        input.hasNextLine();
-        System.out.print("Ürün adı giriniz : ");
-        String name = input.next();
-
-        System.out.print("Ürün adet fiyatını giriniz : ");
+        input.nextLine();
+        System.out.print("Enter product name: ");
+        String name = input.nextLine();
+        System.out.print("Enter unit price of the product: ");
         double unitPrice = input.nextDouble();
-        System.out.print("Stok adetini giriniz : ");
+        System.out.print("Enter stock count: ");
         int stockCount = input.nextInt();
-        System.out.print("İndirim oranını giriniz : ");
+        System.out.print("Enter discount rate: ");
         double discountRate = input.nextDouble();
-        input.hasNextLine();
-        System.out.print("Rengini giriniz : ");
+        input.nextLine(); //skip next line
+        System.out.print("Enter color: ");
         String color = input.next();
-        System.out.print("Marka ID'si giriniz : ");
+        System.out.print("Enter brand ID: ");
         int brandId = input.nextInt();
         Brand brand = getBrandById(brandId);
         if (brand != null) {
             if (choice == 1) {
-                System.out.print("Ekran Boyutu: ");
+                System.out.print("Screen Size: ");
                 double screenSize = input.nextDouble();
                 System.out.print("RAM: ");
                 int ram = input.nextInt();
-                System.out.print("Depolama: ");
+                System.out.print("Storage: ");
                 int storage = input.nextInt();
 
                 Notebook notebook = new Notebook(name, unitPrice, discountRate, stockCount, brand, color, screenSize, ram, storage);
                 addNotebook(notebook);
             } else if (choice == 2) {
-                System.out.print("Hafıza: ");
+                System.out.print("Memory: ");
                 int memory = input.nextInt();
-                System.out.print("Ekran Boyutu: ");
+                System.out.print("Screen Size: ");
                 double screenSize = input.nextDouble();
-                System.out.print("Pil Gücü: ");
+                System.out.print("Battery Power: ");
                 int battery = input.nextInt();
                 System.out.print("RAM: ");
                 int ram = input.nextInt();
 
-                MobilePhone phone = new MobilePhone(name, unitPrice, discountRate, stockCount, brand,memory, screenSize, battery, ram, color);
+                MobilePhone phone = new MobilePhone(name, unitPrice, discountRate, stockCount, brand, memory, screenSize, battery, ram, color);
                 addMobilePhone(phone);
             } else {
                 System.out.println("Invalid choice");
@@ -145,11 +144,11 @@ public class PatikaStore {
     }
 
     public void listProducts() {
-        System.out.println("NoteBook Listesi");
+        System.out.println("Notebook List");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         System.out.format("| %-3s | %-20s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s |%n",
-                "ID", "Ürün Adı", "Fiyat", "İndirim", "Stok",
-                "Marka", "Renk", "Ekran", "RAM", "Depolama");
+                "ID", "Product Name", "Price", "Discount", "Stock",
+                "Brand", "Color", "Screen", "RAM", "Storage");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         for (Notebook notebook : notebooks) {
             System.out.format("| %-3d | %-20s | %-10.1f | %-10.1f | %-10d | %-10s | %-10s | %-10.1f | %-10d | %-10d |%n",
@@ -157,11 +156,11 @@ public class PatikaStore {
                     notebook.getBrand().getName(), notebook.getColor(), notebook.getScreenSize(), notebook.getRam(), notebook.getStorage());
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         }
-        System.out.println("CepTelefonu Listesi");
+        System.out.println("Mobile Phone List");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         System.out.format("| %-3s | %-20s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s | %-10s |%n",
-                "ID", "Ürün Adı", "Fiyat", "İndirim", "Stok",
-                "Marka", "Hafıza", "Ekran", "RAM", "Pil Gücü");
+                "ID", "Product Name", "Price", "Discount", "Stock",
+                "Brand", "Memory", "Screen", "RAM", "Battery");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         for (MobilePhone phone : phones) {
             System.out.format("| %-3d | %-20s | %-10.1f | %-10.1f | %-10d | %-10s | %-10s | %-10.1f | %-10d | %-10d | %-10d |%n",
