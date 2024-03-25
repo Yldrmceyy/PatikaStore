@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class PatikaStore {
     private List<Brand> brands;
     private List<MobilePhone> phones;
@@ -73,9 +72,10 @@ public class PatikaStore {
     }
 
     public void addProduct(int choice) {
-        input.hasNextLine();
+
         System.out.print("Ürün adı giriniz : ");
         String name = input.next();
+        input.nextLine();
 
         System.out.print("Ürün adet fiyatını giriniz : ");
         double unitPrice = input.nextDouble();
@@ -83,7 +83,8 @@ public class PatikaStore {
         int stockCount = input.nextInt();
         System.out.print("İndirim oranını giriniz : ");
         double discountRate = input.nextDouble();
-        input.hasNextLine();
+        input.nextLine();
+
         System.out.print("Rengini giriniz : ");
         String color = input.next();
         System.out.print("Marka ID'si giriniz : ");
