@@ -5,9 +5,6 @@ public class MobilePhone extends Product {
     int ram;
     String color;
 
-
-
-
     public MobilePhone(String name, double unitPrice, double discountRate, int stockCount, Brand brand, int memory, double screenSize, int battery, int ram, String color) {
         super(name, unitPrice, discountRate, stockCount, brand, String.valueOf(color));
         this.memory = memory;
