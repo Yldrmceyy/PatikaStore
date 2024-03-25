@@ -1,4 +1,3 @@
-import javax.swing.*;
 
 public abstract class Product {
     private static int idCounter = 1;

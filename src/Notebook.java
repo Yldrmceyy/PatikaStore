@@ -3,7 +3,6 @@ public class Notebook extends Product {
     private int ram;
     private int storage;
 
-
     public Notebook(String name, double unitPrice, double discountRate, int stockCount, Brand brand, String color, double screenSize, int ram, int storage) {
         super(name, unitPrice, discountRate, stockCount, brand, String.valueOf(color));
         this.screenSize = screenSize;
