@@ -1,4 +1,3 @@
-
 public abstract class Product {
     private static int idCounter = 1;
     int id;
