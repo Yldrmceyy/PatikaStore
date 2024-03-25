@@ -6,4 +6,4 @@ The purpose of the system is to enable the addition, listing, deletion and displ
 
 ### Used technologies
 - Java Programming Language
-- Java Collections Framework
+- Java Collections Framew
